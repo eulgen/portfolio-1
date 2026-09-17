@@ -1,0 +1,14 @@
+node_modules
+.output
+.nuxt
+.git
+.gitignore
+.data
+.vscode
+.env
+.env.*
+README.md
+LICENSE
+*.log
+docker-compose*.yml
+Dockerfile

@@ -1,0 +1,11 @@
+title: "IT Ticket Manager"
+description: "Système de gestion de tickets en console, avec une séparation claire des responsabilités et le pattern Strategy pour le stockage (CSV ou mémoire cache). Tests unitaires avec JUnit 5 et Mockito."
+image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop"
+url: "https://github.com/eulgen/IT-Ticket-Manager"
+github: "https://github.com/eulgen/IT-Ticket-Manager"
+tags:
+  - Java
+  - Design Patterns
+  - JUnit 5
+  - Mockito
+date: 2024-01-01

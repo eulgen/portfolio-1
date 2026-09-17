@@ -1,3 +1,8 @@
+// content.config.ts
+// Basé sur le content.config.ts d'origine du template Nuxt Portfolio,
+// avec la collection "speaking" retirée (pas de conférences pour l'instant).
+// Remplace le fichier content.config.ts à la racine de ton projet par celui-ci.
+
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const createBaseSchema = () => z.object({
@@ -81,6 +86,8 @@ export default defineContentConfig({
         description: z.string().nonempty(),
         image: z.string().nonempty().editor({ input: 'media' }),
         url: z.string().nonempty(),
+        github: z.string().optional(),
+        demo: z.string().optional(),
         tags: z.array(z.string()),
         date: z.date()
       })
@@ -105,26 +112,13 @@ export default defineContentConfig({
         links: z.array(createButtonSchema())
       })
     }),
-    speaking: defineCollection({
-      type: 'page',
-      source: 'speaking.yml',
-      schema: z.object({
-        links: z.array(createButtonSchema()),
-        events: z.array(z.object({
-          category: z.enum(['Live talk', 'Podcast', 'Conference']),
-          title: z.string(),
-          date: z.date(),
-          location: z.string(),
-          url: z.string().optional()
-        }))
-      })
-    }),
     about: defineCollection({
       type: 'page',
       source: 'about.yml',
       schema: z.object({
-        content: z.object({}),
-        images: z.array(createImageSchema())
+        image: z.string().optional(),
+        images: z.array(createImageSchema()).optional(),
+        content: z.object({})
       })
     })
   }

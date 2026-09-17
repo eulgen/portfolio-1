@@ -1,0 +1,10 @@
+title: "Find Me — Frontend"
+description: "Plateforme de gestion d'adresses urbaines et périurbaines : carte interactive, géolocalisation, création d'adresses, export PDF, partage par QR code et tableau de bord utilisateur. Routage optimisé pour le référencement."
+image: "/projects/find-me-frontend.jpg" # remplace par une capture d'écran réelle
+url: "https://find-me-iota.vercel.app"
+tags:
+  - Nuxt.js
+  - Leaflet
+  - Géolocalisation
+  - SEO
+date: 2025-01-01 # date approximative — ajuste si besoin

@@ -1,0 +1,13 @@
+title: "Find Me — Backend API"
+description: "Backend de la plateforme Find Me. Relations one-to-many (Utilisateur–Adresse) avec Spring Data JPA, authentification par session (Spring Security), gestion centralisée des exceptions et documentation Swagger UI. Projet en cours."
+image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop"
+url: "https://github.com/eulgen/findme-backend"
+github: "https://github.com/eulgen/findme-backend"
+demo: "https://find-me-iota.vercel.app"
+tags:
+  - Spring Boot
+  - MySQL
+  - Docker
+  - Spring Security
+  - Swagger
+date: 2025-06-01

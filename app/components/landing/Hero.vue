@@ -103,29 +103,29 @@ defineProps<{
       >
         <div
           v-if="page.hero.links"
-          class="flex items-center gap-2"
+          class="flex flex-wrap items-center justify-center gap-3"
         >
-          <UButton v-bind="page.hero.links[0]" />
           <UButton
-            :color="global.available ? 'success' : 'error'"
-            variant="ghost"
-            class="gap-2"
-            :to="global.available ? global.meetingLink : ''"
-            :label="global.available ? 'Available for new projects' : 'Not available at the moment'"
+            v-for="(link, index) in page.hero.links"
+            :key="index"
+            v-bind="link"
+          />
+          <UBadge
+            color="success"
+            variant="subtle"
+            size="lg"
+            class="gap-2 rounded-full px-3 py-1.5 font-normal"
           >
-            <template #leading>
-              <span class="relative flex size-2">
-                <span
-                  class="absolute inline-flex size-full rounded-full opacity-75"
-                  :class="global.available ? 'bg-success animate-ping' : 'bg-error'"
-                />
-                <span
-                  class="relative inline-flex size-2 scale-90 rounded-full"
-                  :class="global.available ? 'bg-success' : 'bg-error'"
-                />
-              </span>
-            </template>
-          </UButton>
+            <span class="relative flex size-2">
+              <span
+                class="absolute inline-flex size-full rounded-full opacity-75 bg-success animate-ping"
+              />
+              <span
+                class="relative inline-flex size-2 scale-90 rounded-full bg-success"
+              />
+            </span>
+            <span>{{ global.available ? 'Disponible pour de nouveaux projets' : 'Non disponible' }}</span>
+          </UBadge>
         </div>
       </Motion>
 
@@ -158,10 +158,10 @@ defineProps<{
 
     <UMarquee
       pause-on-hover
-      class="py-2 -mx-8 sm:-mx-12 lg:-mx-16 [--duration:40s]"
+      class="py-4 -mx-8 sm:-mx-12 lg:-mx-16 [--duration:30s]"
     >
       <Motion
-        v-for="(img, index) in page.hero.images"
+        v-for="(img, index) in [...page.hero.images, ...page.hero.images]"
         :key="index"
         :initial="{
           scale: 1.1,
@@ -175,16 +175,21 @@ defineProps<{
         }"
         :transition="{
           duration: 0.6,
-          delay: index * 0.1
+          delay: (index % 3) * 0.15
         }"
       >
-        <NuxtImg
-          width="234"
-          height="234"
-          class="rounded-lg aspect-square object-cover"
-          :class="index % 2 === 0 ? '-rotate-2' : 'rotate-2'"
-          v-bind="img"
-        />
+        <div class="group relative overflow-hidden rounded-xl shadow-md border border-neutral-200/50 dark:border-neutral-800/50">
+          <NuxtImg
+            width="280"
+            height="280"
+            class="rounded-xl aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-105"
+            :class="index % 2 === 0 ? '-rotate-1' : 'rotate-1'"
+            v-bind="img"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+            <span class="text-xs text-white font-medium truncate">{{ img.alt }}</span>
+          </div>
+        </div>
       </Motion>
     </UMarquee>
   </UPageHero>

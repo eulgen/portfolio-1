@@ -1,6 +1,11 @@
-title: Designing Interfaces, Building Experiences.
-description: I've worked on a variety of projects, focusing on creating intuitive digital experiences where thoughtful design meets clean code. Here are some highlights I'm proud of, showcasing my process from concept to execution.
+title: "Mes projets"
+description: "Des projets personnels et professionnels, du prototypage à la mise en production : plateformes web, API backend et outils, avec un attrait particulier pour l'architecture."
 links:
-  - label: "Let's talk"
-    color: "neutral"
-  - label: 'Email me'
+  - label: "Voir mon GitHub"
+    to: "https://github.com/eulgen"
+    target: "_blank"
+    icon: "i-simple-icons-github"
+    variant: outline
+  - label: "Me contacter"
+    to: "mailto:ndengbrice@gmail.com"
+    icon: "i-lucide-mail"

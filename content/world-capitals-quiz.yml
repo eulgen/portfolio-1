@@ -1,0 +1,8 @@
+title: "World Capitals Quiz API"
+description: "API REST pour un jeu de quiz sur les capitales du monde, avec logique de génération de questions et suivi de score."
+image: "/projects/world-capitals-quiz.jpg"
+url: "https://github.com/eulgen" # remplace par le lien exact du repo si différent
+tags:
+  - Node.js
+  - Express
+date: 2023-01-01 # date approximative — ajuste si besoin
