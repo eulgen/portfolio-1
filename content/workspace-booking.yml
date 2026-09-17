@@ -1,0 +1,9 @@
+title: "Workspace Booking Platform"
+description: "Plateforme de réservation d'espaces de coworking, avec un tableau de bord admin (occupation, revenus) et un flux de réservation complet côté utilisateur."
+image: "/projects/workspace-booking.jpg"
+url: "https://github.com/eulgen/work-space-reservation"
+tags:
+  - Nuxt.js
+  - Dashboard
+  - Réservation
+date: 2024-01-01 # date approximative — ajuste si besoin

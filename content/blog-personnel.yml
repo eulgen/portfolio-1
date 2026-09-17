@@ -1,0 +1,9 @@
+title: "Blog personnel"
+description: "Blog bilingue (FR/EN) : routage optimisé pour le référencement, fil d'Ariane généré automatiquement, et résumés audio des articles générés par IA."
+image: "/projects/blog-personnel.jpg"
+url: "https://blog-five-phi-j4j2cf82x7.vercel.app"
+tags:
+  - Nuxt.js
+  - SEO
+  - IA
+date: 2024-06-01 # date approximative — ajuste si besoin

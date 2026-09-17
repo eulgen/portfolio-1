@@ -1,2 +1,8 @@
-title: Latest Articles
-description: Some of my recent thoughts on design, development, and the tech industry.
+title: "Blog"
+description: "Notes techniques sur l'architecture backend, mes choix de conception, et ce que j'apprends en construisant findMe."
+links:
+  - label: "Voir mon GitHub"
+    to: "https://github.com/eulgen"
+    target: "_blank"
+    icon: "i-simple-icons-github"
+    variant: outline

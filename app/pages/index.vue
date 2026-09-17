@@ -11,11 +11,11 @@ if (!page.value) {
 }
 
 useSeoMeta({
-  title: page.value?.seo.title || page.value?.title,
-  ogTitle: page.value?.seo.title || page.value?.title,
-  description: page.value?.seo.description || page.value?.description,
-  ogDescription: page.value?.seo.description || page.value?.description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png'
+  title: page.value?.seo?.title || page.value?.title,
+  ogTitle: page.value?.seo?.title || page.value?.title,
+  description: page.value?.seo?.description || page.value?.description,
+  ogDescription: page.value?.seo?.description || page.value?.description,
+  ogImage: '/hero/photo-1.jpg'
 })
 </script>
 
@@ -24,14 +24,15 @@ useSeoMeta({
     <LandingHero :page />
     <UPageSection
       :ui="{
-        container: 'pt-0! lg:grid lg:grid-cols-2 lg:gap-8'
+        container: 'pt-8! lg:grid lg:grid-cols-2 lg:gap-12'
       }"
     >
       <LandingAbout :page />
       <LandingWorkExperience :page />
     </UPageSection>
+    <LandingSkills />
+    <LandingProjects />
     <LandingBlog :page />
     <LandingTestimonials :page />
-    <LandingFAQ :page />
   </UPage>
 </template>

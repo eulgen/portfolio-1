@@ -1,0 +1,9 @@
+title: "Online Bookstore API"
+description: "API REST pour une plateforme de vente de livres : 8 endpoints, opérations CRUD complètes, authentification OAuth 2.0 via Google, et pagination."
+image: "/projects/online-bookstore-api.jpg"
+url: "https://github.com/eulgen" # remplace par le lien exact du repo si différent
+tags:
+  - FastAPI
+  - MongoDB
+  - OAuth 2.0
+date: 2023-06-01 # date approximative — ajuste si besoin
