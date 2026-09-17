@@ -66,7 +66,7 @@ jobs:
             docker run -d \
               --name portfolio-app \
               --restart unless-stopped \
-              -p 3001:3001 \
+              -p 3001:3000 \
               "${GHCR_IMAGE}"
 
             docker image prune -f

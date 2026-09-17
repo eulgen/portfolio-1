@@ -53,7 +53,7 @@ const formatDate = (dateString: string) => {
           to="/blog"
           class="text-sm flex items-center gap-1"
         >
-          <UIcon name="lucide:chevron-left" />
+          <UIcon name="i-lucide-chevron-left" />
           Blog
         </ULink>
         <div class="flex flex-col gap-3 mt-8">
