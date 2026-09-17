@@ -28,8 +28,9 @@ WORKDIR /app
 # Copy the built output (contains the standalone Node.js server)
 COPY --from=builder /app/.output .output
 
-# Nitro server listens on port 3000 by default
-EXPOSE 3000
+# Built-in container healthcheck
+HEALTHCHECK --interval=15s --timeout=5s --start-period=10s --retries=3 \
+  CMD node -e "fetch('http://localhost:3000/').then(r=>r.ok?process.exit(0):process.exit(1)).catch(()=>process.exit(1))"
 
 # Run the Node.js server directly
 CMD ["node", ".output/server/index.mjs"]

@@ -67,11 +67,6 @@ jobs:
               --name portfolio-app \
               --restart unless-stopped \
               -p 3000:3000 \
-              --health-cmd="node -e \"fetch('http://localhost:3000/').then(r => { if (!r.ok) process.exit(1) }).catch(() => process.exit(1))\"" \
-              --health-interval=10s \
-              --health-timeout=5s \
-              --health-retries=3 \
-              --health-start-period=5s \
               "${GHCR_IMAGE}"
 
             docker image prune -f
@@ -85,7 +80,7 @@ jobs:
           VPS_USER: ${{ secrets.VPS_USER }}
         run: |
           echo "En attente du statut de santé du conteneur..."
-          for i in {1..12}; do
+          for i in {1..15}; do
             STATUS=$(ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa "${VPS_USER}@${VPS_HOST}" "docker inspect --format='{{json .State.Health.Status}}' portfolio-app 2>/dev/null" | tr -d '"')
             RUNNING=$(ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa "${VPS_USER}@${VPS_HOST}" "docker inspect --format='{{.State.Running}}' portfolio-app 2>/dev/null")
 
@@ -104,7 +99,7 @@ jobs:
               exit 1
             fi
 
-            echo "Statut actuel : $STATUS ($i/12)... nouvelle vérification dans 3s"
+            echo "Statut actuel : $STATUS ($i/15)... nouvelle vérification dans 3s"
             sleep 3
           done
 
